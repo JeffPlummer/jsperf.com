@@ -23,6 +23,9 @@
   {{/if}}
 </p>
 
+<!-- Hack:  Dependent code requires this to exist even though it isn't used -->
+<text id="question" style="visible: false"></text>
+
 {{#if info}}
   <section>
     <h2>Info</h2>
@@ -176,14 +179,14 @@
           {{#if authorError}} {{authorError}}{{/if}}
         </div>
         <div>
-          <label for="authorEmail">Email <em title="This field is required">*</em> </label>
+          <label for="author-email">Email <em title="This field is required">*</em> </label>
           {{#unless mailError}}<label class="inline">{{/unless}}
-            <input type="email" name="authorEmail" id="authorEmail" {{#if authorEmail}}value={{authorEmail}}{{/if}} required>
+            <input type="email" name="authorEmail" id="author-email" {{#if authorEmail}}value={{authorEmail}}{{/if}} required>
             {{#if authorEmailError}} {{authorEmailError}}{{else}}(only used for Gravatar)</label>{{/if}}
         </div>
         <div>
-          <label for="authorURL">URL </label>
-          <input type="url" name="authorURL" id="authorURL" {{#if authorURL}}value={{authorURL}}{{/if}}>
+          <label for="author-url">URL </label>
+          <input type="url" name="authorURL" id="author-url" {{#if authorURL}}value={{authorURL}}{{/if}}>
           {{#if authorURLError}} {{authorURLError}}{{/if}}
         </div>
         <div>

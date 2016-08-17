@@ -53,7 +53,8 @@
     "vision": "4.1.0",
     "visionary": "6.0.0",
     "yar": "7.0.2",
-    "snyk": "^1.17.1"
+    "snyk": "^1.17.1",
+    "qs":"6.2.1"
   },
   "devDependencies": {
     "cheerio": "0.20.0",

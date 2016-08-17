@@ -1,5 +1,6 @@
 var _ = require('lodash');
 var Joi = require('joi');
+var qs = require('qs');
 
 const defaults = require('../../lib/defaults');
 const schema = require('../../lib/schema');
@@ -44,7 +45,8 @@ exports.register = function (server, options, next) {
         reply.view('home/index', _.assign(defaults.testPageContext, request.payload, {authorized: true}, errObj)).code(400);
       };
 
-      Joi.validate(request.payload, schema.testPage, function (er, pageWithTests) {
+      var obj = qs.parse(request.payload);
+      Joi.validate(obj, schema.testPage, function (er, pageWithTests) {
         if (er) {
           var errObj = {};
           // `abortEarly` option defaults to `true` so can rely on 0 index
